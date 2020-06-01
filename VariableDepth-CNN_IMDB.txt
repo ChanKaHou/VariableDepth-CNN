@@ -1,0 +1,444 @@
+Python 3.7.3 (v3.7.3:ef4ec6ed12, Mar 25 2019, 22:22:05) [MSC v.1916 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> 
+ RESTART: E:\Paper\2020\ICANN 2020\VariableDepth-CNN\VariableDepth-CNN_IMDB.py 
+Dataset Size: 25000 25000
+Text Vocabulary Size: 101522
+Label Vocabulary Size: 2
+VariableDepth(
+  (Embedding): Sequential(
+    (0): Embedding(101522, 300)
+    (1): Dropout(p=0.2, inplace=True)
+  )
+  (CNN): Sequential(
+    (0): Conv2d(1, 1024, kernel_size=(11, 300), stride=(1, 1), padding=(5, 0))
+    (1): ReLU(inplace=True)
+    (2): MaxPool2d(kernel_size=(11, 1), stride=(11, 1), padding=(5, 0), dilation=1, ceil_mode=False)
+  )
+  (AdaptConnect): Sequential(
+    (0): Transpose()
+    (1): Linear(in_features=1024, out_features=300, bias=True)
+    (2): Softsign()
+  )
+  (FullyConnect): Sequential(
+    (0): Flatten()
+    (1): Linear(in_features=300, out_features=2, bias=True)
+  )
+)
+Adagrad (
+Parameter Group 0
+    eps: 1e-10
+    initial_accumulator_value: 0
+    lr: 0.01
+    lr_decay: 0
+    weight_decay: 0
+)
+torch.Size([101522, 300])
+torch.Size([1024, 1, 11, 300])
+torch.Size([1024])
+torch.Size([300, 1024])
+torch.Size([300])
+torch.Size([2, 300])
+torch.Size([2])
+Epoch: 01 | Average Loss: 0.7322
+Epoch: 01 | Test Accuracy: 0.5000
+Epoch: 02 | Average Loss: 0.6973
+Epoch: 02 | Test Accuracy: 0.5000
+Epoch: 03 | Average Loss: 0.6966
+Epoch: 03 | Test Accuracy: 0.5007
+Epoch: 04 | Average Loss: 0.6951
+Epoch: 04 | Test Accuracy: 0.5000
+Epoch: 05 | Average Loss: 0.6948
+Epoch: 05 | Test Accuracy: 0.5000
+Epoch: 06 | Average Loss: 0.6948
+Epoch: 06 | Test Accuracy: 0.5000
+Epoch: 07 | Average Loss: 0.6946
+Epoch: 07 | Test Accuracy: 0.5000
+Epoch: 08 | Average Loss: 0.6946
+Epoch: 08 | Test Accuracy: 0.5000
+Epoch: 09 | Average Loss: 0.6950
+Epoch: 09 | Test Accuracy: 0.5000
+Epoch: 10 | Average Loss: 0.6947
+Epoch: 10 | Test Accuracy: 0.5000
+Epoch: 11 | Average Loss: 0.6946
+Epoch: 11 | Test Accuracy: 0.5000
+Epoch: 12 | Average Loss: 0.6946
+Epoch: 12 | Test Accuracy: 0.5280
+Epoch: 13 | Average Loss: 0.6940
+Epoch: 13 | Test Accuracy: 0.5000
+Epoch: 14 | Average Loss: 0.6940
+Epoch: 14 | Test Accuracy: 0.5000
+Epoch: 15 | Average Loss: 0.6937
+Epoch: 15 | Test Accuracy: 0.5092
+Epoch: 16 | Average Loss: 0.6939
+Epoch: 16 | Test Accuracy: 0.5000
+Epoch: 17 | Average Loss: 0.6924
+Epoch: 17 | Test Accuracy: 0.5000
+Epoch: 18 | Average Loss: 0.6932
+Epoch: 18 | Test Accuracy: 0.5084
+Epoch: 19 | Average Loss: 0.6939
+Epoch: 19 | Test Accuracy: 0.5353
+Epoch: 20 | Average Loss: 0.6933
+Epoch: 20 | Test Accuracy: 0.5096
+Epoch: 21 | Average Loss: 0.6926
+Epoch: 21 | Test Accuracy: 0.5463
+Epoch: 22 | Average Loss: 0.6936
+Epoch: 22 | Test Accuracy: 0.4760
+Epoch: 23 | Average Loss: 0.6939
+Epoch: 23 | Test Accuracy: 0.5031
+Epoch: 24 | Average Loss: 0.5355
+Epoch: 24 | Test Accuracy: 0.7990
+Epoch: 25 | Average Loss: 0.3687
+Epoch: 25 | Test Accuracy: 0.8536
+Epoch: 26 | Average Loss: 0.3108
+Epoch: 26 | Test Accuracy: 0.8788
+Epoch: 27 | Average Loss: 0.2709
+Epoch: 27 | Test Accuracy: 0.8810
+Epoch: 28 | Average Loss: 0.2251
+Epoch: 28 | Test Accuracy: 0.8844
+Epoch: 29 | Average Loss: 0.1771
+Epoch: 29 | Test Accuracy: 0.8787
+Epoch: 30 | Average Loss: 0.1415
+Epoch: 30 | Test Accuracy: 0.8767
+Epoch: 31 | Average Loss: 0.0887
+Epoch: 31 | Test Accuracy: 0.8891
+Epoch: 32 | Average Loss: 0.0669
+Epoch: 32 | Test Accuracy: 0.8863
+Epoch: 33 | Average Loss: 0.0381
+Epoch: 33 | Test Accuracy: 0.8841
+Epoch: 34 | Average Loss: 0.0389
+Epoch: 34 | Test Accuracy: 0.8871
+Epoch: 35 | Average Loss: 0.0202
+Epoch: 35 | Test Accuracy: 0.8869
+Epoch: 36 | Average Loss: 0.0213
+Epoch: 36 | Test Accuracy: 0.8870
+Epoch: 37 | Average Loss: 0.0156
+Epoch: 37 | Test Accuracy: 0.8899
+Epoch: 38 | Average Loss: 0.0138
+Epoch: 38 | Test Accuracy: 0.8868
+Epoch: 39 | Average Loss: 0.0103
+Epoch: 39 | Test Accuracy: 0.8886
+Epoch: 40 | Average Loss: 0.0091
+Epoch: 40 | Test Accuracy: 0.8888
+Epoch: 41 | Average Loss: 0.0106
+Epoch: 41 | Test Accuracy: 0.8893
+Epoch: 42 | Average Loss: 0.0082
+Epoch: 42 | Test Accuracy: 0.8885
+Epoch: 43 | Average Loss: 0.0084
+Epoch: 43 | Test Accuracy: 0.8780
+Epoch: 44 | Average Loss: 0.0076
+Epoch: 44 | Test Accuracy: 0.8831
+Epoch: 45 | Average Loss: 0.0060
+Epoch: 45 | Test Accuracy: 0.8866
+Epoch: 46 | Average Loss: 0.0083
+Epoch: 46 | Test Accuracy: 0.8866
+Epoch: 47 | Average Loss: 0.0086
+Epoch: 47 | Test Accuracy: 0.8877
+Epoch: 48 | Average Loss: 0.0056
+Epoch: 48 | Test Accuracy: 0.8892
+Epoch: 49 | Average Loss: 0.0066
+Epoch: 49 | Test Accuracy: 0.8873
+Epoch: 50 | Average Loss: 0.0062
+Epoch: 50 | Test Accuracy: 0.8883
+Epoch: 51 | Average Loss: 0.0071
+Epoch: 51 | Test Accuracy: 0.8895
+Epoch: 52 | Average Loss: 0.0059
+Epoch: 52 | Test Accuracy: 0.8874
+Epoch: 53 | Average Loss: 0.0062
+Epoch: 53 | Test Accuracy: 0.8900
+Epoch: 54 | Average Loss: 0.0051
+Epoch: 54 | Test Accuracy: 0.8887
+Epoch: 55 | Average Loss: 0.0043
+Epoch: 55 | Test Accuracy: 0.8907
+Epoch: 56 | Average Loss: 0.0058
+Epoch: 56 | Test Accuracy: 0.8883
+Epoch: 57 | Average Loss: 0.0047
+Epoch: 57 | Test Accuracy: 0.8891
+Epoch: 58 | Average Loss: 0.0052
+Epoch: 58 | Test Accuracy: 0.8913
+Epoch: 59 | Average Loss: 0.0040
+Epoch: 59 | Test Accuracy: 0.8896
+Epoch: 60 | Average Loss: 0.0039
+Epoch: 60 | Test Accuracy: 0.8914
+Epoch: 61 | Average Loss: 0.0045
+Epoch: 61 | Test Accuracy: 0.8861
+Epoch: 62 | Average Loss: 0.0046
+Epoch: 62 | Test Accuracy: 0.8904
+Epoch: 63 | Average Loss: 0.0180
+Epoch: 63 | Test Accuracy: 0.8881
+Epoch: 64 | Average Loss: 0.0056
+Epoch: 64 | Test Accuracy: 0.8890
+Epoch: 65 | Average Loss: 0.0040
+Epoch: 65 | Test Accuracy: 0.8887
+Epoch: 66 | Average Loss: 0.0043
+Epoch: 66 | Test Accuracy: 0.8878
+Epoch: 67 | Average Loss: 0.0047
+Epoch: 67 | Test Accuracy: 0.8887
+Epoch: 68 | Average Loss: 0.0042
+Epoch: 68 | Test Accuracy: 0.8898
+Epoch: 69 | Average Loss: 0.0047
+Epoch: 69 | Test Accuracy: 0.8887
+Epoch: 70 | Average Loss: 0.0043
+Epoch: 70 | Test Accuracy: 0.8892
+Epoch: 71 | Average Loss: 0.0041
+Epoch: 71 | Test Accuracy: 0.8880
+Epoch: 72 | Average Loss: 0.0040
+Epoch: 72 | Test Accuracy: 0.8858
+Epoch: 73 | Average Loss: 0.0043
+Epoch: 73 | Test Accuracy: 0.8861
+Epoch: 74 | Average Loss: 0.0038
+Epoch: 74 | Test Accuracy: 0.8872
+Epoch: 75 | Average Loss: 0.0042
+Epoch: 75 | Test Accuracy: 0.8907
+Epoch: 76 | Average Loss: 0.0036
+Epoch: 76 | Test Accuracy: 0.8899
+Epoch: 77 | Average Loss: 0.0036
+Epoch: 77 | Test Accuracy: 0.8900
+Epoch: 78 | Average Loss: 0.0034
+Epoch: 78 | Test Accuracy: 0.8906
+Epoch: 79 | Average Loss: 0.0034
+Epoch: 79 | Test Accuracy: 0.8911
+Epoch: 80 | Average Loss: 0.0037
+Epoch: 80 | Test Accuracy: 0.8912
+Epoch: 81 | Average Loss: 0.0035
+Epoch: 81 | Test Accuracy: 0.8901
+Epoch: 82 | Average Loss: 0.0035
+Epoch: 82 | Test Accuracy: 0.8893
+Epoch: 83 | Average Loss: 0.0032
+Epoch: 83 | Test Accuracy: 0.8877
+Epoch: 84 | Average Loss: 0.0036
+Epoch: 84 | Test Accuracy: 0.8902
+Epoch: 85 | Average Loss: 0.0036
+Epoch: 85 | Test Accuracy: 0.8897
+Epoch: 86 | Average Loss: 0.0032
+Epoch: 86 | Test Accuracy: 0.8880
+Epoch: 87 | Average Loss: 0.0035
+Epoch: 87 | Test Accuracy: 0.8801
+Epoch: 88 | Average Loss: 0.0035
+Epoch: 88 | Test Accuracy: 0.8919
+Epoch: 89 | Average Loss: 0.0033
+Epoch: 89 | Test Accuracy: 0.8878
+Epoch: 90 | Average Loss: 0.0049
+Epoch: 90 | Test Accuracy: 0.8893
+Epoch: 91 | Average Loss: 0.0046
+Epoch: 91 | Test Accuracy: 0.8863
+Epoch: 92 | Average Loss: 0.0028
+Epoch: 92 | Test Accuracy: 0.8897
+Epoch: 93 | Average Loss: 0.0031
+Epoch: 93 | Test Accuracy: 0.8874
+Epoch: 94 | Average Loss: 0.0036
+Epoch: 94 | Test Accuracy: 0.8906
+Epoch: 95 | Average Loss: 0.0030
+Epoch: 95 | Test Accuracy: 0.8912
+Epoch: 96 | Average Loss: 0.0030
+Epoch: 96 | Test Accuracy: 0.8899
+Epoch: 97 | Average Loss: 0.0035
+Epoch: 97 | Test Accuracy: 0.8884
+Epoch: 98 | Average Loss: 0.0028
+Epoch: 98 | Test Accuracy: 0.8918
+Epoch: 99 | Average Loss: 0.0025
+Epoch: 99 | Test Accuracy: 0.8884
+Epoch: 100 | Average Loss: 0.0025
+Epoch: 100 | Test Accuracy: 0.8904
+Epoch: 101 | Average Loss: 0.0025
+Epoch: 101 | Test Accuracy: 0.8894
+Epoch: 102 | Average Loss: 0.0024
+Epoch: 102 | Test Accuracy: 0.8893
+Epoch: 103 | Average Loss: 0.0023
+Epoch: 103 | Test Accuracy: 0.8893
+Epoch: 104 | Average Loss: 0.0023
+Epoch: 104 | Test Accuracy: 0.8889
+Epoch: 105 | Average Loss: 0.0023
+Epoch: 105 | Test Accuracy: 0.8872
+Epoch: 106 | Average Loss: 0.0030
+Epoch: 106 | Test Accuracy: 0.8905
+Epoch: 107 | Average Loss: 0.0029
+Epoch: 107 | Test Accuracy: 0.8894
+Epoch: 108 | Average Loss: 0.0027
+Epoch: 108 | Test Accuracy: 0.8900
+Epoch: 109 | Average Loss: 0.0023
+Epoch: 109 | Test Accuracy: 0.8888
+Epoch: 110 | Average Loss: 0.0027
+Epoch: 110 | Test Accuracy: 0.8896
+Epoch: 111 | Average Loss: 0.0021
+Epoch: 111 | Test Accuracy: 0.8905
+Epoch: 112 | Average Loss: 0.0024
+Epoch: 112 | Test Accuracy: 0.8914
+Epoch: 113 | Average Loss: 0.0019
+Epoch: 113 | Test Accuracy: 0.8864
+Epoch: 114 | Average Loss: 0.0020
+Epoch: 114 | Test Accuracy: 0.8889
+Epoch: 115 | Average Loss: 0.0018
+Epoch: 115 | Test Accuracy: 0.8884
+Epoch: 116 | Average Loss: 0.0026
+Epoch: 116 | Test Accuracy: 0.8921
+Epoch: 117 | Average Loss: 0.0019
+Epoch: 117 | Test Accuracy: 0.8899
+Epoch: 118 | Average Loss: 0.0023
+Epoch: 118 | Test Accuracy: 0.8878
+Epoch: 119 | Average Loss: 0.0025
+Epoch: 119 | Test Accuracy: 0.8912
+Epoch: 120 | Average Loss: 0.0019
+Epoch: 120 | Test Accuracy: 0.8922
+Epoch: 121 | Average Loss: 0.0020
+Epoch: 121 | Test Accuracy: 0.8892
+Epoch: 122 | Average Loss: 0.0017
+Epoch: 122 | Test Accuracy: 0.8891
+Epoch: 123 | Average Loss: 0.0012
+Epoch: 123 | Test Accuracy: 0.8890
+Epoch: 124 | Average Loss: 0.0022
+Epoch: 124 | Test Accuracy: 0.8905
+Epoch: 125 | Average Loss: 0.0020
+Epoch: 125 | Test Accuracy: 0.8890
+Epoch: 126 | Average Loss: 0.0013
+Epoch: 126 | Test Accuracy: 0.8853
+Epoch: 127 | Average Loss: 0.0021
+Epoch: 127 | Test Accuracy: 0.8827
+Epoch: 128 | Average Loss: 0.0009
+Epoch: 128 | Test Accuracy: 0.8890
+Epoch: 129 | Average Loss: 0.0013
+Epoch: 129 | Test Accuracy: 0.8883
+Epoch: 130 | Average Loss: 0.0010
+Epoch: 130 | Test Accuracy: 0.8904
+Epoch: 131 | Average Loss: 0.0011
+Epoch: 131 | Test Accuracy: 0.8900
+Epoch: 132 | Average Loss: 0.0011
+Epoch: 132 | Test Accuracy: 0.8898
+Epoch: 133 | Average Loss: 0.0014
+Epoch: 133 | Test Accuracy: 0.8897
+Epoch: 134 | Average Loss: 0.0008
+Epoch: 134 | Test Accuracy: 0.8887
+Epoch: 135 | Average Loss: 0.0011
+Epoch: 135 | Test Accuracy: 0.8896
+Epoch: 136 | Average Loss: 0.0007
+Epoch: 136 | Test Accuracy: 0.8915
+Epoch: 137 | Average Loss: 0.0006
+Epoch: 137 | Test Accuracy: 0.8892
+Epoch: 138 | Average Loss: 0.0007
+Epoch: 138 | Test Accuracy: 0.8886
+Epoch: 139 | Average Loss: 0.0011
+Epoch: 139 | Test Accuracy: 0.8898
+Epoch: 140 | Average Loss: 0.0008
+Epoch: 140 | Test Accuracy: 0.8890
+Epoch: 141 | Average Loss: 0.0006
+Epoch: 141 | Test Accuracy: 0.8891
+Epoch: 142 | Average Loss: 0.0010
+Epoch: 142 | Test Accuracy: 0.8910
+Epoch: 143 | Average Loss: 0.0012
+Epoch: 143 | Test Accuracy: 0.8906
+Epoch: 144 | Average Loss: 0.0009
+Epoch: 144 | Test Accuracy: 0.8881
+Epoch: 145 | Average Loss: 0.0010
+Epoch: 145 | Test Accuracy: 0.8896
+Epoch: 146 | Average Loss: 0.0010
+Epoch: 146 | Test Accuracy: 0.8878
+Epoch: 147 | Average Loss: 0.0006
+Epoch: 147 | Test Accuracy: 0.8926
+Epoch: 148 | Average Loss: 0.0012
+Epoch: 148 | Test Accuracy: 0.8912
+Epoch: 149 | Average Loss: 0.0009
+Epoch: 149 | Test Accuracy: 0.8905
+Epoch: 150 | Average Loss: 0.0009
+Epoch: 150 | Test Accuracy: 0.8918
+Epoch: 151 | Average Loss: 0.0007
+Epoch: 151 | Test Accuracy: 0.8924
+Epoch: 152 | Average Loss: 0.0007
+Epoch: 152 | Test Accuracy: 0.8923
+Epoch: 153 | Average Loss: 0.0013
+Epoch: 153 | Test Accuracy: 0.8893
+Epoch: 154 | Average Loss: 0.0008
+Epoch: 154 | Test Accuracy: 0.8895
+Epoch: 155 | Average Loss: 0.0011
+Epoch: 155 | Test Accuracy: 0.8903
+Epoch: 156 | Average Loss: 0.0009
+Epoch: 156 | Test Accuracy: 0.8920
+Epoch: 157 | Average Loss: 0.0011
+Epoch: 157 | Test Accuracy: 0.8922
+Epoch: 158 | Average Loss: 0.0007
+Epoch: 158 | Test Accuracy: 0.8905
+Epoch: 159 | Average Loss: 0.0009
+Epoch: 159 | Test Accuracy: 0.8917
+Epoch: 160 | Average Loss: 0.0008
+Epoch: 160 | Test Accuracy: 0.8892
+Epoch: 161 | Average Loss: 0.0009
+Epoch: 161 | Test Accuracy: 0.8871
+Epoch: 162 | Average Loss: 0.0009
+Epoch: 162 | Test Accuracy: 0.8919
+Epoch: 163 | Average Loss: 0.0009
+Epoch: 163 | Test Accuracy: 0.8908
+Epoch: 164 | Average Loss: 0.0011
+Epoch: 164 | Test Accuracy: 0.8901
+Epoch: 165 | Average Loss: 0.0006
+Epoch: 165 | Test Accuracy: 0.8908
+Epoch: 166 | Average Loss: 0.0006
+Epoch: 166 | Test Accuracy: 0.8887
+Epoch: 167 | Average Loss: 0.0007
+Epoch: 167 | Test Accuracy: 0.8912
+Epoch: 168 | Average Loss: 0.0006
+Epoch: 168 | Test Accuracy: 0.8923
+Epoch: 169 | Average Loss: 0.0014
+Epoch: 169 | Test Accuracy: 0.8920
+Epoch: 170 | Average Loss: 0.0012
+Epoch: 170 | Test Accuracy: 0.8920
+Epoch: 171 | Average Loss: 0.0006
+Epoch: 171 | Test Accuracy: 0.8906
+Epoch: 172 | Average Loss: 0.0017
+Epoch: 172 | Test Accuracy: 0.8844
+Epoch: 173 | Average Loss: 0.0016
+Epoch: 173 | Test Accuracy: 0.8880
+Epoch: 174 | Average Loss: 0.0008
+Epoch: 174 | Test Accuracy: 0.8910
+Epoch: 175 | Average Loss: 0.0008
+Epoch: 175 | Test Accuracy: 0.8790
+Epoch: 176 | Average Loss: 0.0008
+Epoch: 176 | Test Accuracy: 0.8892
+Epoch: 177 | Average Loss: 0.0008
+Epoch: 177 | Test Accuracy: 0.8892
+Epoch: 178 | Average Loss: 0.0009
+Epoch: 178 | Test Accuracy: 0.8881
+Epoch: 179 | Average Loss: 0.0006
+Epoch: 179 | Test Accuracy: 0.8924
+Epoch: 180 | Average Loss: 0.0008
+Epoch: 180 | Test Accuracy: 0.8914
+Epoch: 181 | Average Loss: 0.0007
+Epoch: 181 | Test Accuracy: 0.8929
+Epoch: 182 | Average Loss: 0.0015
+Epoch: 182 | Test Accuracy: 0.8879
+Epoch: 183 | Average Loss: 0.0005
+Epoch: 183 | Test Accuracy: 0.8913
+Epoch: 184 | Average Loss: 0.0011
+Epoch: 184 | Test Accuracy: 0.8914
+Epoch: 185 | Average Loss: 0.0007
+Epoch: 185 | Test Accuracy: 0.8904
+Epoch: 186 | Average Loss: 0.0005
+Epoch: 186 | Test Accuracy: 0.8910
+Epoch: 187 | Average Loss: 0.0006
+Epoch: 187 | Test Accuracy: 0.8920
+Epoch: 188 | Average Loss: 0.0006
+Epoch: 188 | Test Accuracy: 0.8923
+Epoch: 189 | Average Loss: 0.0005
+Epoch: 189 | Test Accuracy: 0.8925
+Epoch: 190 | Average Loss: 0.0006
+Epoch: 190 | Test Accuracy: 0.8905
+Epoch: 191 | Average Loss: 0.0012
+Epoch: 191 | Test Accuracy: 0.8913
+Epoch: 192 | Average Loss: 0.0011
+Epoch: 192 | Test Accuracy: 0.8926
+Epoch: 193 | Average Loss: 0.0007
+Epoch: 193 | Test Accuracy: 0.8908
+Epoch: 194 | Average Loss: 0.0006
+Epoch: 194 | Test Accuracy: 0.8910
+Epoch: 195 | Average Loss: 0.0005
+Epoch: 195 | Test Accuracy: 0.8916
+Epoch: 196 | Average Loss: 0.0008
+Epoch: 196 | Test Accuracy: 0.8908
+Epoch: 197 | Average Loss: 0.0009
+Epoch: 197 | Test Accuracy: 0.8916
+Epoch: 198 | Average Loss: 0.0006
+Epoch: 198 | Test Accuracy: 0.8893
+Epoch: 199 | Average Loss: 0.0005
+Epoch: 199 | Test Accuracy: 0.8848
+Epoch: 200 | Average Loss: 0.0007
+Epoch: 200 | Test Accuracy: 0.8912
+
+>>> 
